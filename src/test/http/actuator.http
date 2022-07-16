@@ -1,0 +1,11 @@
+### root
+GET http://localhost:8080/actuator
+Authorization: Basic user {{password}}
+
+### health
+GET http://localhost:8080/actuator/health
+Authorization: Basic user {{password}}
+
+### prometheus metrics
+GET http://localhost:8080/actuator/prometheus
+Authorization: Basic user {{password}}
