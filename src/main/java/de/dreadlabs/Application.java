@@ -1,4 +1,4 @@
-package de.dreadlabs.springbootkatas;
+package de.dreadlabs;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

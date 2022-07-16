@@ -1,4 +1,4 @@
-package de.dreadlabs.springbootkatas;
+package de.dreadlabs;
 
 import org.junit.jupiter.api.Test;
 
