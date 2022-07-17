@@ -1,0 +1,109 @@
+### single file
+POST http://localhost:8080/multipartfileuploads
+Authorization: Basic user {{password}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="file1mb"
+
+< ./../resources/multipartfileuploads/file1mb
+--boundary--
+
+### single file exceeding max file size
+POST http://localhost:8080/multipartfileuploads
+Authorization: Basic user {{password}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="filegt1mb"
+
+< ./../resources/multipartfileuploads/filegt1mb
+--boundary--
+
+### multiple files
+POST http://localhost:8080/multipartfileuploads
+Authorization: Basic user {{password}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="file1mb"
+
+< ./../resources/multipartfileuploads/file1mb
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="file512kb"
+
+< ./../resources/multipartfileuploads/file512kb
+--boundary--
+
+### multiple files exceeding max file size
+POST http://localhost:8080/multipartfileuploads
+Authorization: Basic user {{password}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="filegt1mb"
+
+< ./../resources/multipartfileuploads/filegt1mb
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="filegt1mb"
+
+< ./../resources/multipartfileuploads/filegt1mb
+--boundary--
+
+### multiple files exceeding max request size
+POST http://localhost:8080/multipartfileuploads
+Authorization: Basic user {{password}}
+Content-Type: multipart/form-data; boundary=boundary
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="file1mb"
+
+< ./../resources/multipartfileuploads/file1mb
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="file1mb"
+
+< ./../resources/multipartfileuploads/file1mb
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="file1mb"
+
+< ./../resources/multipartfileuploads/file1mb
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="file1mb"
+
+< ./../resources/multipartfileuploads/file1mb
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="file1mb"
+
+< ./../resources/multipartfileuploads/file1mb
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="file1mb"
+
+< ./../resources/multipartfileuploads/file1mb
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="file1mb"
+
+< ./../resources/multipartfileuploads/file1mb
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="file1mb"
+
+< ./../resources/multipartfileuploads/file1mb
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="file1mb"
+
+< ./../resources/multipartfileuploads/file1mb
+
+--boundary
+Content-Disposition: form-data; name="files"; filename="file1mb"
+
+< ./../resources/multipartfileuploads/file1mb
+--boundary--
