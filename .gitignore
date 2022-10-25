@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Custom ###
+src/test/http/http-client.private.env.json
