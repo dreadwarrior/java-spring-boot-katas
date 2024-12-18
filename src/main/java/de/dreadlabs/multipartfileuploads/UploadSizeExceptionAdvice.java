@@ -1,12 +1,10 @@
 package de.dreadlabs.multipartfileuploads;
 
-import javax.servlet.http.HttpServletRequest;
-
 import io.micrometer.core.instrument.DistributionSummary;
 import io.micrometer.core.instrument.MeterRegistry;
+import jakarta.servlet.http.HttpServletRequest;
 import org.apache.tomcat.util.http.fileupload.impl.FileSizeLimitExceededException;
 import org.apache.tomcat.util.http.fileupload.impl.SizeLimitExceededException;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -38,7 +36,7 @@ public class UploadSizeExceptionAdvice {
         // total request size limit is exceeded.
         // - Tomcat wraps root cause in `j.l.IllegalStateException`
         // - Spring also checks exception message contents (see `o.s.w.m.s.StandardMultipartHttpServletRequest`
-        String message = ex.getMessage();
+        String message = ex.getCause().getMessage();
         if (message != null && message.contains("request")) {
             return ResponseEntity.badRequest().body("The total size of all uploaded files is too large.");
         }
